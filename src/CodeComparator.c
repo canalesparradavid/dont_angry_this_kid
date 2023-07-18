@@ -11,6 +11,7 @@
 
 #include "CodeComparator.h"
 
+void saveDirectory(CodeComparator *comparator, char *directorio);
 void directoryMap(char *directoryName, void(*handler)(char*,char*,void*), void *args);
 void createConfigMap(char *ruta, char *name, void *args);
 void areDifferentMap(char *ruta, char *name, void *args);
@@ -36,22 +37,16 @@ void createConfig(CodeComparator *comparator, char *ficheroConfig, char *directo
     fprintf(f, "");
     fclose(f);
 
-    directoryMap(directorio, createConfigMap, (void*)(comparator->ficheroConfig));
+    saveDirectory(comparator, directorio);
+    directoryMap(comparator->directorio, createConfigMap, (void*)(comparator->ficheroConfig));
 }
 
 void addConfig(CodeComparator *comparator, char *ficheroConfig) {
     strcpy(comparator->ficheroConfig, ficheroConfig);
 }
 
-// TODO: HACER QUE TENGA EN CUENTA EL DIRECTORIO CON EL QUE SE ESTA COMPARANDO
 void compare(CodeComparator *comparator, char *directorio) {
-    if (isSubdirectory(directorio, "/") || isSubdirectory(directorio, "./")) {
-        strcpy(comparator->directorio, directorio);
-    }
-    else {
-        strcpy(comparator->directorio, "./");
-        strcat(comparator->directorio, directorio);
-    }
+    saveDirectory(comparator, directorio);
 
     int MAX_LINE_LENGTH = 1024;
     char line[MAX_LINE_LENGTH];
@@ -85,6 +80,16 @@ void compare(CodeComparator *comparator, char *directorio) {
 
 int getDifference(CodeComparator comparator) {
     return comparator.diferencia;
+}
+
+void saveDirectory(CodeComparator *comparator, char *directorio) {
+    if (isSubdirectory(directorio, "/") || isSubdirectory(directorio, "./") || strcmp(directorio, ".") == 0) {
+        strcpy(comparator->directorio, directorio);
+    }
+    else {
+        strcpy(comparator->directorio, "./");
+        strcat(comparator->directorio, directorio);
+    }
 }
 
 int calcularMD5Archivo(const char *rutaArchivo, char *md5Hash) {
