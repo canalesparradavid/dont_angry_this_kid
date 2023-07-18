@@ -21,7 +21,7 @@ en la próxima sección.
 
 ## USO
 El modo de uso del programa es mediante el comando:
-```bash
+```
 ./main <dir1> <dir2>
 ```
 donde se pueden dar 4 opciones:
