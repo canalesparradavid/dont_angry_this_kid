@@ -43,8 +43,8 @@ configuración
 
 - Se introducen los dos directorios
 
-Solución: Se crea un fichero de configuración a
-partir del primer directorio y se compara con el segundo directorio.
+    Solución: Se crea un fichero de configuración a
+    partir del primer directorio y se compara con el segundo directorio.
 
 Cuando termina la ejecucion aparece la siguiente pantalla:
 ```
