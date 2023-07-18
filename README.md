@@ -27,24 +27,24 @@ El modo de uso del programa es mediante el comando:
 donde se pueden dar 4 opciones:
 - No se introduce ninguno de los dos directorios
 
-<ul><li style="list-style:none;">Solución: Se imprime un mensaje de funcionamiento
-del programa.</li></ul>
+    Solución: Se imprime un mensaje de funcionamiento
+    del programa.
 
 - Se introduce unicamente el primer directorio pero existe un fichero de configuración
 
-<ul><li style="list-style:none;">Solución: Se recoge la configuracion del fichero
-y se compara con el directorio.</li></ul>
+    Solución: Se recoge la configuracion del fichero
+    y se compara con el directorio.
 
 - Se introduce unicamente el primer directorio pero no existe un fichero de
 configuración
 
-<ul><li style="list-style:none;">Solución: Se crea un fichero de configuración a
-partir del directorio.</li></ul>
+    Solución: Se crea un fichero de configuración a
+    partir del directorio.
 
 - Se introducen los dos directorios
 
-<ul><li style="list-style:none;">Solución: Se crea un fichero de configuración a
-partir del primer directorio y se compara con el segundo directorio.</li></ul>
+Solución: Se crea un fichero de configuración a
+partir del primer directorio y se compara con el segundo directorio.
 
 Cuando termina la ejecucion aparece la siguiente pantalla:
 ```
