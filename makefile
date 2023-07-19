@@ -4,6 +4,10 @@ CFLAGS = -lssl -lcrypto -Wno-deprecated-declarations -Wno-format-zero-length
 
 all: init main
 
+build: all
+	mkdir -p build
+	mv ./bin/main ./build/datk
+
 init:
 	mkdir -p bin
 

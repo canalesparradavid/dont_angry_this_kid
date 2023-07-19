@@ -33,7 +33,7 @@ int main(int argc, char** argv){
     newCodeComparator(&comparator);
 
     if (argc < 2) {
-        printf("No se ha introducido ningun directorio. Modo de empleo del programa:\n$ programa <dir1> <dir2>\n");
+        printf("No se ha introducido ningun directorio. Modo de empleo del programa:\n$ %s <dir1> <dir2>\n", argv[0]);
         return 0;
     }
     else if (argc < 3) {
