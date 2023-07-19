@@ -7,6 +7,7 @@ all: init main
 build: all
 	mkdir -p build
 	mv ./bin/main ./build/datk
+	make clear
 
 init:
 	mkdir -p bin
